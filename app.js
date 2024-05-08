@@ -16,11 +16,22 @@ class School {
   get numberOfStudents () {
     return this._numberOfStudents;
   }
-  set numberOfStudents {
-    if (newNumberOfStudents === number) {
-      this._myProperty =
+
+  set numberOfStudents(value) {
+    if (value.isNaN()) {
+    console.log('Invalid input: numberOfStudents must be set to a Number.');
     } else {
-      return 'Invalid input: numberOfStudents must be set to a Number.'
+      this._numberOfStudents = value;
     }
+   }
+
+  quickFacts () {
+    console.log(` ${this._name} educates ${this._numberOfStudents} students at the ${this._level}.`)
+  }
+
+  static
+    pickSubstituteTeacher (substituteTeachers)  {
+    const randInd = Math.floor(substituteTeachers.length * Math.random());
+    return substituteTeachers[randInd];
   }
 }
