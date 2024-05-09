@@ -32,6 +32,27 @@ class School {
   static
     pickSubstituteTeacher (substituteTeachers)  {
     const randInd = Math.floor(substituteTeachers.length * Math.random());
+
     return substituteTeachers[randInd];
   }
+  class PrimarySchool extends School {
+    constructor(name, level, numberOfStudents) {
+      super(name);
+      super(numberOfStudents);
+      this._pickupPolicy = pickupPolicy;
+    }
+
+    get name() {
+     return this._name;
+    }
+
+    get numberOfStudents() {
+      return this._numberOfStudents;
+    }
+
+    get pickupPolicy() {
+      return this._pickupPolicy;
+    }
+  }
+  
 }
